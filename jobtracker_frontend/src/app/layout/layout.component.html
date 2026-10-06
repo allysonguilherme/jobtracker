@@ -1,2 +1,23 @@
-<p>layout.component works!</p>
-<button pButton>Marcar</button>
+<p-sidebar-layout>
+  <p-sidebar>
+    <p-sidebar-spacer />
+    <p-sidebar-aside>
+      <p-sidebar-panel>
+        <p-sidebar-header>
+          <p-sidebar-menu>
+           <p-sidebar-menu-item>
+            <button pSidebarMenuButton class="px-1!">
+              <div class="flex size-6 shrink-0 items-center justify-center rounded-md bg-linear-to-br from-violet-500 to-indigo-600 text-white text-xs font-bold leading-none">J</div>
+              <span class="font-semibold text-sm">Job Tracker</span>
+            </button>
+          </p-sidebar-menu-item>
+        </p-sidebar-menu></p-sidebar-header>
+        <p-sidebar-content>...</p-sidebar-content>
+        <p-sidebar-footer>...</p-sidebar-footer>
+      </p-sidebar-panel>
+    </p-sidebar-aside>
+  </p-sidebar>
+  <p-sidebar-main>
+    <!-- page content -->
+  </p-sidebar-main>
+</p-sidebar-layout>
