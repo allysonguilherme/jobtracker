@@ -1,5 +1,5 @@
 <p-sidebar-layout>
-  <p-sidebar>
+  <p-sidebar id="navbar" [(open)]="open">
     <p-sidebar-spacer />
     <p-sidebar-aside>
       <p-sidebar-panel>
@@ -39,6 +39,11 @@
     </p-sidebar-aside>
   </p-sidebar>
   <p-sidebar-main>
+    <header class="flex h-12 items-center gap-2 border-b border-(--p-content-border-color) px-4">
+      <button pButton pSidebarTrigger target="navbar" severity="secondary" text size="large">
+        <i class="pi pi-sidebar"></i>
+      </button>
+    </header>
     <router-outlet />
   </p-sidebar-main>
 </p-sidebar-layout>

@@ -17,26 +17,14 @@ interface NavMenuItem {
 }
 @Component({
   standalone: true,
-  imports: [
-    ButtonDirective,
-    SidebarModule,
-    Home,
-    Inbox,
-    Search,
-    Users,
-    Bell,
-    Cog,
-    Sidebar,
-    RouterLink,
-    RouterLinkActive,
-    RouterOutlet,
-  ],
+  imports: [SidebarModule, RouterLink, RouterLinkActive, RouterOutlet, ButtonDirective],
   selector: 'app-layout',
   styleUrl: './layout.component.css',
   templateUrl: './layout.component.html',
 })
 export class LayoutComponent {
   activeMenu = signal('Home');
+  open = signal(true);
 
   navMenuItems: NavMenuItem[] = [
     { icon: 'pi pi-home', label: 'Dashboard', route: '/dashboard' },
