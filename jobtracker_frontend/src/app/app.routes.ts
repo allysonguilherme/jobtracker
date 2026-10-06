@@ -6,6 +6,10 @@ export const routes: Routes = [
     path: '',
     component: LayoutComponent,
     children: [
+      {
+        path: 'dashboard',
+        loadComponent: () => import('./pages/dashboard/dashboard.component').then(c => c.DashboardComponent)
+      }
     ]
   }
 ];

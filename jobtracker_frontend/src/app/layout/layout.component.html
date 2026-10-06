@@ -12,12 +12,33 @@
             </button>
           </p-sidebar-menu-item>
         </p-sidebar-menu></p-sidebar-header>
-        <p-sidebar-content>...</p-sidebar-content>
+        <p-sidebar-content>
+          <p-sidebar-group>
+            <p-sidebar-group-label>Menu</p-sidebar-group-label>
+            <p-sidebar-group-content>
+              <p-sidebar-menu>
+                @for (item of navMenuItems; track item.label){
+                  <p-sidebar-menu-item>
+                    <a pSidebarMenuButton
+                       [routerLink]="item.route"
+                       routerLinkActive
+                       #rla="routerLinkActive"
+                       [isActive]="rla.isActive"
+                    >
+                      <i [class]="item.icon"></i>
+                      <span>{{item.label}}</span>
+                    </a>
+                  </p-sidebar-menu-item>
+                }
+              </p-sidebar-menu>
+            </p-sidebar-group-content>
+          </p-sidebar-group>
+        </p-sidebar-content>
         <p-sidebar-footer>...</p-sidebar-footer>
       </p-sidebar-panel>
     </p-sidebar-aside>
   </p-sidebar>
   <p-sidebar-main>
-    <!-- page content -->
+    <router-outlet />
   </p-sidebar-main>
 </p-sidebar-layout>
